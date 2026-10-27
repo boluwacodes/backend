@@ -317,3 +317,7 @@ npm run migration:revert
 - [ ] Add role-based authorization guards (currently JWT-authenticated but not role-scoped) to maintainer/sponsor-only endpoints.
 - [ ] Add pagination/filtering to list endpoints (bounties, milestones, pools) as data volume grows.
 - [ ] Weighted (not just even) per-issue milestone budget distribution.
+
+## Fix for Issue #208: Stellar testnet vs mainnet config not validated
+
+Add startup validation ensuring STELLAR_NETWORK env var is set and matches the Horizon URL. Misconfiguration could cause testnet funds to be used in production.
